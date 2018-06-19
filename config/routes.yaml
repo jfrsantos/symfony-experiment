@@ -5,3 +5,31 @@
 app_lucky_number:
   path: /lucky/number
   controller: App\Controller\LuckyController::number
+
+blog_list:
+  path: /blog/{page}
+  controller: App\Controller\BlogController::list
+  defaults:
+    page: 1
+  requirements:
+    page: '\d+'
+
+blog_show:
+  path: /blog/{slug}
+  controller: App\Controller\BlogController::show
+
+about_us:
+  path:
+    nl: /over-ons
+    en: /about-us
+  controller: App\Controller\CompanyController::about
+
+#article_show:
+#  path:     /articles/{_locale}/{year}/{slug}.{_format}
+#  controller: App\Controller\ArticleController::show
+#  defaults:
+#      _format: html
+#  requirements:
+#      _locale:  en|fr
+#      _format:  html|rss
+#      year:     \d+
